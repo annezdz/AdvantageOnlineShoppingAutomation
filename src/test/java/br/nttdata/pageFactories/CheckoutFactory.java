@@ -1,9 +1,5 @@
 package br.nttdata.pageFactories;
 
-import java.util.Locale;
-
-import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,8 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CheckoutFactory extends BasePageFactory {
 
-	
-    
 	public CheckoutFactory(WebDriver driver) {
 		super(driver);
 	}
@@ -49,36 +43,44 @@ public class CheckoutFactory extends BasePageFactory {
 	
 	
 	public void pesquisarProduto() {
+		
 		btnLupa.click();
 		nomeProduto.sendKeys("HP PAVILION 15Z TOUCH LAPTOP");
 	}
 	
 	public void selecionarProduto() {
+		
 		btnViewAll.click();
 		produtoEncontrado.click();
 	}
 	
 	public void incluirItem() {
+		
 		btnAumentarQuantidade.click();
 	}
 	
 	public void excluirItem() {
+		
 		btnDiminuirQuantidade.click();
 	}
 	
 	public void clicarBotaoCheckout() {
+		
 		wait.until(ExpectedConditions.elementToBeClickable(btnCheckout)).click();
 	}
 	
 	public String valorUnitario() {
+		
 		return precoUnitarioElement.getText();
 	}
 	
 	public String quantidade() {
+		
 		return quantidadeSelecionada.getText();
 	}
 	
 	public String valorTotal() { 
+		
 		return valorTotalTag.getText();
 	}
 

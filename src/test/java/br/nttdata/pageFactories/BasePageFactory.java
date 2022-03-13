@@ -19,7 +19,6 @@ public class BasePageFactory {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
-
     public BasePageFactory(WebDriver driver) {
     	
         this.driver = driver;

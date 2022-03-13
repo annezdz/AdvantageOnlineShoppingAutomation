@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import entities.Cor;
-
 public class ProdutoPageFactory extends BasePageFactory {
 
 	public ProdutoPageFactory(WebDriver driver) {
@@ -65,6 +63,7 @@ public class ProdutoPageFactory extends BasePageFactory {
 	
 
 	public String extraiConteudoCampo(String itemName) {
+		
 		switch (itemName) {
 		case "nameProduct": {
 			return nomeProduto.getText();
@@ -104,6 +103,7 @@ public class ProdutoPageFactory extends BasePageFactory {
 		}
 		}
 	}
+	
 
 	public void selecionaCorProduto(String cor) {
 		
@@ -120,8 +120,8 @@ public class ProdutoPageFactory extends BasePageFactory {
 		}
 	}
 	
+	
 	public void clicarEmAddCart() {
-		
 		btnAddToCart.click();
 	}
 	
@@ -135,6 +135,7 @@ public class ProdutoPageFactory extends BasePageFactory {
 		} 
 		return "";
 	}
+	
 	
 	public void clicarNoCarrinho() {
 		

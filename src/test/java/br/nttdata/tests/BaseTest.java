@@ -37,7 +37,7 @@ public class BaseTest {
 
 	@BeforeClass
 	public static void beforeSuite() throws IOException {
-		
+
 		if (driver == null) {
 			System.out.println(System.getProperty("user.dir"));
 			Properties config = new Properties();
@@ -47,7 +47,7 @@ public class BaseTest {
 
 			switch (config.getProperty("browser")) {
 			case "firefox": {
-				
+
 				System.setProperty("webdriver.gecko.driver", "src\\test\\resources\\executables\\geckodriver.exe");
 				ProfilesIni profile = new ProfilesIni();
 				FirefoxProfile testprofile = profile.getProfile("SeleniumProfile");
@@ -57,9 +57,8 @@ public class BaseTest {
 				break;
 			}
 			case "opera": {
-				
-				System.setProperty("webdriver.opera.driver",
-						"src\\test\\resources\\executables\\operadriver.exe");
+
+				System.setProperty("webdriver.opera.driver", "src\\test\\resources\\executables\\operadriver.exe");
 
 				DesiredCapabilities capabilities = new DesiredCapabilities();
 				OperaOptions options = new OperaOptions();
@@ -71,7 +70,7 @@ public class BaseTest {
 			}
 
 			case "chrome": {
-				
+
 				ChromeOptions ops = new ChromeOptions();
 				ops.addArguments("--disable-notifications");
 
@@ -80,7 +79,7 @@ public class BaseTest {
 				break;
 			}
 			case "ie": {
-				
+
 				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 				capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
 						true);
@@ -92,13 +91,13 @@ public class BaseTest {
 				break;
 			}
 			case "edge": {
-				
+
 				WebDriverManager.edgedriver().setup();
 				driver = new EdgeDriver();
 				break;
 			}
 			default: {
-				
+
 				System.out.println("Webdriver não informado. " + "Escolha entre: chrome, firefox, ie, edge ou opera.");
 			}
 			}
@@ -106,42 +105,37 @@ public class BaseTest {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Long.parseLong(config.getProperty("implicit.wait")),
 					TimeUnit.SECONDS);
-			driver.manage().timeouts().pageLoadTimeout(Long.parseLong(config.getProperty("timeouts")), TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(Long.parseLong(config.getProperty("timeouts")),
+					TimeUnit.SECONDS);
 			wait = new WebDriverWait(driver, 20);
 		}
 
 	}
-	
- 
-	@After
-    public static void clearCookiesAfter() throws Exception {
-                driver.manage().deleteAllCookies();
-    }
-	
+
+//	@After
+//	public static void clearCookiesAfter() throws Exception {
+//		driver.manage().deleteAllCookies();
+//	}
 
 	@AfterEach
-    public static void clearCookiesBefore() throws Exception {
-                driver.manage().deleteAllCookies();
-    		
-    }
-	
-	
+	public static void clearCookiesBefore() throws Exception {
+		driver.manage().deleteAllCookies();
+
+	}
 
 	@AfterAll
 	public static void afterAll() throws InterruptedException {
 		if (null != driver) {
 			Thread.sleep(2000);
 			driver.close();
-            driver.manage().deleteAllCookies();
+			driver.manage().deleteAllCookies();
 			driver.quit();
 		}
 	}
-	
+
 	@AfterClass
 	public static void teardDown() throws InterruptedException {
-		      driver.quit();
-	}
-	
+		driver.quit();
 	}
 
-
+}

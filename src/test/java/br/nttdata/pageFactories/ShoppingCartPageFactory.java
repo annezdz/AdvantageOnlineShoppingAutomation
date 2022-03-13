@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ShoppingCartPageFactory extends BasePageFactory{
 
@@ -34,13 +33,11 @@ public class ShoppingCartPageFactory extends BasePageFactory{
 	@FindBy(xpath = "//header/nav[1]/ul[1]/li[2]/ul[1]/li[1]/tool-tip-cart[1]/div[1]/div[1]/label[2]")
 	WebElement mensagemCarrinhoVazio;
 	
+	
 	public void esvaziarCarrinho() {
 			JavascriptExecutor js = (JavascriptExecutor)driver;
 			js.executeScript("arguments[0].click()", btnRemoverProduto);
 			js.executeScript("arguments[0].click()", btnRemoverProduto);
-
-
-			//wait.until(ExpectedConditions.elementToBeClickable(btnRemoverProduto)).click();
 	}
 
 	
@@ -49,10 +46,12 @@ public class ShoppingCartPageFactory extends BasePageFactory{
 		return txtCarrinhoVazio.getText();
 	}
 	
+	
 	public String msgQuantidadeVazia() {
 		
 		return txtQuantidadeVazia.getText();
 	}
+	
 	
 	public void pausarMouseSobreCarrinhoDeCompras() {
 		
@@ -60,10 +59,8 @@ public class ShoppingCartPageFactory extends BasePageFactory{
 		actions.moveToElement(carrinho).pause(10).build();
 	}
 	
+	
 	public void mensagemCarrinhoVazio() {
 		mensagemCarrinhoVazio.getText();
 	}
-	
-	
-
 }

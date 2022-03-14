@@ -21,6 +21,8 @@ public class ProdutoSteps extends BaseTest {
 	
 	private static final double DELTA = 1e-15;
 	
+	private static int i;
+	
 	HomePageFactory homePageFactory = new HomePageFactory(driver);
 	ProdutoPageFactory produtoPageFactory = new ProdutoPageFactory(driver);
 	CheckoutFactory checkoutFactory = new CheckoutFactory(driver);
@@ -31,24 +33,27 @@ public class ProdutoSteps extends BaseTest {
 
 
 	@Dado("que acessei o site AdvantageOnlineShopping")
-	public void que_acessei_o_site_advantage_online_shopping() {
+	public void que_acessei_o_site_advantage_online_shopping() throws Exception {
 				
 		driver.get("https://advantageonlineshopping.com");
 	}
 
 	@E("no menu clicar na opção Special Offer")
-	public void no_menu_clicar_na_opção_special_offer() throws InterruptedException {
+	public void no_menu_clicar_na_opção_special_offer() throws Exception {
 		
 		homePageFactory.clicarEmSpecialOffer();
+		takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
 		Thread.sleep(2000);
 	}
 
 	@E("clicar no botão See Offer")
-	public void clicarNoBotãoSeeOffer() throws InterruptedException {
+	public void clicarNoBotãoSeeOffer() throws Exception {
 		
 		Thread.sleep(2000);
 		homePageFactory.clicarEmSeeOffer();
 		Thread.sleep(2000);
+		takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
+
 	}
 	
 	@Então("vou validar as especificações do produto")
@@ -62,7 +67,7 @@ public class ProdutoSteps extends BaseTest {
 	}
 	
 	@E("alterar a cor")
-	public void alterar_a_cor_do_produto() throws InterruptedException {
+	public void alterar_a_cor_do_produto() throws Exception {
 		
 		produtoPageFactory.selecionaCorProduto(alterandoCor);
 		Thread.sleep(2);
@@ -75,9 +80,11 @@ public class ProdutoSteps extends BaseTest {
 	}
 
 	@Então("o produto foi adicionado ao carrinho")
-	public void o_produto_foi_adicionado_ao_carrinho() {
+	public void o_produto_foi_adicionado_ao_carrinho() throws Exception {
 		
 		Assert.assertEquals((produtoPageFactory.validarProdutoAdicionado("txtQtyCarrinho")), "1");
+		takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
+
 	}
 
 	@E("pesquisar o produto clicando no ícone de lupa")
@@ -137,11 +144,12 @@ public class ProdutoSteps extends BaseTest {
 	}
 
 	@Então("o carinho de compras estará vazio")
-	public void o_carinho_de_compras_estará_vazio() throws InterruptedException {
+	public void o_carinho_de_compras_estará_vazio() throws Exception {
 
 		WebElement element = driver.findElement(By.xpath("//a[@id='shoppingCartLink']//*[name()='svg']"));
 		Thread.sleep(4000);
 		shoppingCartPageFactory.pausarMouseSobreCarrinhoDeCompras();
 		Assert.assertEquals("Your shopping cart is empty", shoppingCartPageFactory.msgCarrinhoVazio());
+
 	}
 }

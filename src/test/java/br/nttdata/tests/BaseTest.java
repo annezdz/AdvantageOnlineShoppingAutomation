@@ -1,12 +1,16 @@
 package br.nttdata.tests;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -14,6 +18,8 @@ import org.junit.BeforeClass;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -36,7 +42,7 @@ public class BaseTest {
 	public static WebDriverWait wait;
 
 	@BeforeClass
-	public static void beforeSuite() throws IOException {
+	public static void beforeSuite() throws Exception {
 
 		if (driver == null) {
 			System.out.println(System.getProperty("user.dir"));
@@ -108,23 +114,31 @@ public class BaseTest {
 			driver.manage().timeouts().pageLoadTimeout(Long.parseLong(config.getProperty("timeouts")),
 					TimeUnit.SECONDS);
 			wait = new WebDriverWait(driver, 20);
+			takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
 		}
 
 	}
-
-//	@After
-//	public static void clearCookiesAfter() throws Exception {
-//		driver.manage().deleteAllCookies();
-//	}
+	static int i = 0;
+	
+	public static void takeSnapShot(WebDriver webdriver,String fileWithPath) throws Exception{
+        
+		TakesScreenshot scrShot =((TakesScreenshot)webdriver);
+		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+		File DestFile=new File(fileWithPath);
+		FileUtils.copyFile(SrcFile, DestFile);
+		}
+	
 
 	@AfterEach
 	public static void clearCookiesBefore() throws Exception {
+		
 		driver.manage().deleteAllCookies();
-
 	}
+	
 
 	@AfterAll
-	public static void afterAll() throws InterruptedException {
+	public static void afterAll() throws Exception {
+		
 		if (null != driver) {
 			Thread.sleep(2000);
 			driver.close();
@@ -134,8 +148,9 @@ public class BaseTest {
 	}
 
 	@AfterClass
-	public static void teardDown() throws InterruptedException {
+	public static void teardDown() throws Exception {
 		driver.quit();
+
 	}
 
 }

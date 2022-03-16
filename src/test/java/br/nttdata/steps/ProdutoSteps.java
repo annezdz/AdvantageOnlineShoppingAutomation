@@ -1,6 +1,10 @@
 package br.nttdata.steps;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -12,6 +16,7 @@ import br.nttdata.pageFactories.ProdutoPageFactory;
 import br.nttdata.pageFactories.ShoppingCartPageFactory;
 import br.nttdata.restAssured.Data;
 import br.nttdata.tests.BaseTest;
+import entities.Color;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
@@ -69,8 +74,25 @@ public class ProdutoSteps extends BaseTest {
 	@E("alterar a cor")
 	public void alterar_a_cor_do_produto() throws Exception {
 		
-		produtoPageFactory.selecionaCorProduto(alterandoCor);
-		Thread.sleep(2);
+		String color = "BLACK";
+
+		Color colorChoice = produtoPageFactory.ramdomColor();
+//		do {
+//			if (colorChoice.getColor().equals(color)) {
+//				colorChoice = produtoPageFactory.ramdomColor();
+//				System.out.println(colorChoice);
+//			}
+//			else {
+//				produtoPageFactory.selecionaCorProduto(colorChoice);
+//			}
+//		} while (colorChoice.getColor().equals(color));
+		
+		while(colorChoice.getColor().equals(color)) {
+			
+			colorChoice = produtoPageFactory.ramdomColor();
+		}
+		produtoPageFactory.selecionaCorProduto((colorChoice));
+		Thread.sleep(5000);
 	}
 	
 	@E("clicar no botão Add to cart")

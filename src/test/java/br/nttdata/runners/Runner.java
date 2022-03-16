@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @CucumberOptions(
 		features = "src/test/resources/features/produto.feature",
 		glue = "br.nttdata.steps",
-//		tags = ("@Cenario2"),
+		tags = ("@Cenario2"),
 		plugin = {"pretty", 
 				"html:target/HtmlReports/html_report",
 				"json:target/JsonReports/json_report",

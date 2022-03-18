@@ -81,18 +81,8 @@ Obs: instruções para instalação do Docker em https://docs.docker.com/desktop
 ![image](https://user-images.githubusercontent.com/58869569/158082211-a729de74-21d2-4cba-bd8f-49067547b5a0.png)
 
 - Baixar o projeto do GitHub e abrir na IDE
-- Baixar o projeto da ProdutoAPI do GitHub e abrir na sua IDE
-- OBS : API em SpringBoot Java criada para consumir e manipular os dados do banco.
- ![image](https://user-images.githubusercontent.com/58869569/158082347-cbdf036a-a70e-480b-9d86-e910709f925f.png)
 
-- Após abrir a API ProdutoAPI na IDE, rodar a aplicação.
-
-![image](https://user-images.githubusercontent.com/58869569/158082379-f6d1c9eb-74d4-47e9-96bc-d186e92cb80b.png)
-![image](https://user-images.githubusercontent.com/58869569/158082398-8246100b-eacf-4219-9836-0e2811e1328f.png)
-
-
-- Após abrir o AdvantageOnlineShopping em sua IDE, rodar a automação. 
--#### OBS: A ProdutoAPI deve estar rodando durante a execução da automação.
+- Abrir o projeto AdvantageOnlineShopping em sua IDE, rodar a automação. 
 
 ![image](https://user-images.githubusercontent.com/58869569/158082505-8abb2fa5-b120-47fd-aff9-377fc288b56d.png)
 
@@ -103,6 +93,12 @@ do Chrome e encontra-se na pasta do projeto :
 Caso seu navegador esteja desatualizado, existem duas opções:
 - Atualizar o navegador ou baixar o driver compatível com sua versão em : https://chromedriver.chromium.org/downloads
 
+
+Inserir o User e Password do MySQL no campo Environment Variable.
+Na IDE Eclipse inserir em :
+
+![image](https://user-images.githubusercontent.com/58869569/158923659-d5d0ca6b-a959-4dd5-9716-5eee2ba6bd57.png)
+![image](https://user-images.githubusercontent.com/58869569/158923810-4e5c84a2-a673-47d7-9a7d-fd46ed864354.png)
 
 
 

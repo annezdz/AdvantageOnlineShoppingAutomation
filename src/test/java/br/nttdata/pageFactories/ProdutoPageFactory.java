@@ -1,10 +1,21 @@
 package br.nttdata.pageFactories;
 
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import br.nttdata.database.SQLConnector;
+import entities.Color;
+
 public class ProdutoPageFactory extends BasePageFactory {
+	
+	SQLConnector sqlCon = new SQLConnector();
 
 	public ProdutoPageFactory(WebDriver driver) {
 		super(driver);
@@ -42,12 +53,24 @@ public class ProdutoPageFactory extends BasePageFactory {
 
 	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[3]")
 	WebElement color;
+	
+	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[1]")
+	WebElement colorBlue;
+	
+	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[2]")
+	WebElement colorBlack;
+	
+	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[3]")
+	WebElement colorGray;
 
 	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[4]")
-	WebElement corRoxa;
+	WebElement colorPurple;
 
 	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[5]")
-	WebElement corVermelha;
+	WebElement colorRed;
+	
+	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[2]/div[2]/div[1]/div[1]/div[2]/span[6]")
+	WebElement colorYellow;
 	
 	@FindBy(xpath = "//button[@name='save_to_cart']")
 	WebElement btnAddToCart;
@@ -62,7 +85,7 @@ public class ProdutoPageFactory extends BasePageFactory {
 	WebElement btnCarrinho;
 	
 
-	public String extraiConteudoCampo(String itemName) {
+	public String extraiConteudoCampo(String itemName) throws ClassNotFoundException, SQLException {
 		
 		switch (itemName) {
 		case "nameProduct": {
@@ -96,7 +119,13 @@ public class ProdutoPageFactory extends BasePageFactory {
 			return weight.getText();
 		}
 		case "color": {
-			return color.getAttribute("title").toString();
+			String colorDB = sqlCon.validaCampos().get("color");
+			return colorDB.equals("BLUE")? colorBlue.getAttribute("title").toString() 
+					: colorDB.equals("BLACK")? colorBlack.getAttribute("title").toString()
+					: colorDB.equals("RED")? colorRed.getAttribute("title").toString()
+					: colorDB.equals("PURPLE")? colorPurple.getAttribute("title").toString()
+					: colorDB.equals("GRAY")? colorGray.getAttribute("title").toString()
+					: colorYellow.getAttribute("title").toString();
 		}
 		default: {
 			return null;
@@ -105,19 +134,47 @@ public class ProdutoPageFactory extends BasePageFactory {
 	}
 	
 
-	public void selecionaCorProduto(String cor) {
-		
-		switch (cor) {
-		case "GRAY": {
-			color.click();
+	public void selecionaCorProduto(Color color) {
+		switch (color) {
+		case BLUE:{
+			colorBlue.click();
+			break;
 		}
-		case "PURPLE": {
-			corRoxa.click();
+		case BLACK: {
+			colorBlack.click();
+			break;
+
 		}
-		case "RED": {
-			corVermelha.click();
+		case GRAY: {
+			colorGray.click();
+			break;
+
+		}
+		case PURPLE: {
+			colorPurple.click();
+			break;
+
+		}
+		case RED: {
+			colorRed.click();
+			break;
+
+		}
+		case YELLOW: {
+			colorYellow.click();
+			break;
 		}
 		}
+	}
+	
+	public Color ramdomColor() {
+	 
+		List<Color> colors = Arrays.asList(Color.values());
+
+		int size = colors.size();
+		Random random = new Random();
+		var edu = colors.get(random.nextInt(size));
+		return edu;
 	}
 	
 	

@@ -133,6 +133,7 @@ public class BaseTest {
 	public static void clearCookiesBefore() throws Exception {
 		
 		driver.manage().deleteAllCookies();
+		driver.quit();
 	}
 	
 
@@ -141,16 +142,15 @@ public class BaseTest {
 		
 		if (null != driver) {
 			Thread.sleep(2000);
-			driver.close();
 			driver.manage().deleteAllCookies();
 			driver.quit();
+			driver = null;
 		}
 	}
 
 	@AfterClass
 	public static void teardDown() throws Exception {
 		driver.quit();
-
 	}
 
 }

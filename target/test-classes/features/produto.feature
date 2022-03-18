@@ -10,11 +10,6 @@ Contexto:
 	Dado que acessei o site AdvantageOnlineShopping
 	E no menu clicar na opção Special Offer
 	
-#	E alterar a <cor>
-#	|  cor    |
-#	|  GRAY   |
-#	|  RED    | 
-	
 @Cenario1
 Cenario: Validar especificações do produto
 	E clicar no botão See Offer
@@ -23,7 +18,7 @@ Cenario: Validar especificações do produto
 @Cenario2
 Cenario: Validar alteração de cor do produto no carrinho
 	E clicar no botão See Offer
-	E alterar a cor
+	E selecionar a cor do banco
 	E clicar no botão Add to cart
 	Então o produto foi adicionado ao carrinho
 

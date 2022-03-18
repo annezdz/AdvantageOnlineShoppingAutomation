@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1595272900,
+              "duration": 1160482400,
               "status": "passed"
             },
             "line": 10,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 4062987200,
+              "duration": 11120353100,
               "status": "passed"
             },
             "line": 11,
@@ -36,8 +36,8 @@
         ]
       },
       {
-        "start_timestamp": "2022-03-14T11:41:57.932Z",
-        "line": 19,
+        "start_timestamp": "2022-03-18T01:58:12.964Z",
+        "line": 14,
         "name": "Validar especificações do produto",
         "description": "",
         "id": "validações-do-produto;validar-especificações-do-produto",
@@ -46,10 +46,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4643605000,
+              "duration": 5243606600,
               "status": "passed"
             },
-            "line": 20,
+            "line": 15,
             "name": "clicar no botão See Offer",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoBotãoSeeOffer()"
@@ -58,11 +58,10 @@
           },
           {
             "result": {
-              "error_message": "java.net.ConnectException: Connection refused: connect\r\n\tat java.base/sun.nio.ch.Net.connect0(Native Method)\r\n\tat java.base/sun.nio.ch.Net.connect(Net.java:576)\r\n\tat java.base/sun.nio.ch.Net.connect(Net.java:565)\r\n\tat java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)\r\n\tat java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)\r\n\tat java.base/java.net.Socket.connect(Socket.java:645)\r\n\tat org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)\r\n\tat org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)\r\n\tat org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)\r\n\tat org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)\r\n\tat org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)\r\n\tat org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)\r\n\tat org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)\r\n\tat org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)\r\n\tat org.apache.http.client.HttpClient$execute$0.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)\r\n\tat io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2072)\r\n\tat io.restassured.internal.http.HTTPBuilder.doRequest(HTTPBuilder.java:495)\r\n\tat io.restassured.internal.http.HTTPBuilder.request(HTTPBuilder.java:452)\r\n\tat io.restassured.internal.http.HTTPBuilder$request$2.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)\r\n\tat io.restassured.internal.RequestSpecificationImpl.sendHttpRequest(RequestSpecificationImpl.groovy:1453)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)\r\n\tat io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)\r\n\tat io.restassured.filter.Filter$filter$0.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat io.restassured.filter.Filter$filter.call(Unknown Source)\r\n\tat io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)\r\n\tat io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)\r\n\tat io.restassured.filter.Filter$filter.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:157)\r\n\tat io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)\r\n\tat io.restassured.filter.FilterContext$next.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:148)\r\n\tat io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1672)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)\r\n\tat io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1678)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)\r\n\tat io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy:173)\r\n\tat io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)\r\n\tat io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy:257)\r\n\tat io.restassured.internal.RequestSpecificationImpl.get(RequestSpecificationImpl.groovy)\r\n\tat br.nttdata.restAssured.Data.pegarResponseBody(Data.java:44)\r\n\tat br.nttdata.restAssured.Data.validaCampos(Data.java:51)\r\n\tat br.nttdata.steps.ProdutoSteps.vou_validar_as_especificações_do_produto(ProdutoSteps.java:62)\r\n\tat ✽.vou validar as especificações do produto(file:///C:/Users/anicolle/eclipse-workspace/DesafioNTTData3/src/test/resources/features/produto.feature:21)\r\n",
-              "duration": 1692410200,
-              "status": "failed"
+              "duration": 1542246400,
+              "status": "passed"
             },
-            "line": 21,
+            "line": 16,
             "name": "vou validar as especificações do produto",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.vou_validar_as_especificações_do_produto()"
@@ -85,7 +84,7 @@
         "steps": [
           {
             "result": {
-              "duration": 206001000,
+              "duration": 1004899700,
               "status": "passed"
             },
             "line": 10,
@@ -97,7 +96,7 @@
           },
           {
             "result": {
-              "duration": 3478313200,
+              "duration": 9260375600,
               "status": "passed"
             },
             "line": 11,
@@ -110,8 +109,8 @@
         ]
       },
       {
-        "start_timestamp": "2022-03-14T11:42:10.048Z",
-        "line": 24,
+        "start_timestamp": "2022-03-18T01:58:32.229Z",
+        "line": 19,
         "name": "Validar alteração de cor do produto no carrinho",
         "description": "",
         "id": "validações-do-produto;validar-alteração-de-cor-do-produto-no-carrinho",
@@ -120,10 +119,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4544888600,
+              "duration": 5199381600,
               "status": "passed"
             },
-            "line": 25,
+            "line": 20,
             "name": "clicar no botão See Offer",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoBotãoSeeOffer()"
@@ -132,22 +131,22 @@
           },
           {
             "result": {
-              "duration": 101995500,
+              "duration": 314518300,
               "status": "passed"
             },
-            "line": 26,
-            "name": "alterar a cor",
+            "line": 21,
+            "name": "selecionar a cor do banco",
             "match": {
-              "location": "br.nttdata.steps.ProdutoSteps.alterar_a_cor_do_produto()"
+              "location": "br.nttdata.steps.ProdutoSteps.selecionarACorDoBanco()"
             },
             "keyword": "E "
           },
           {
             "result": {
-              "duration": 59000700,
+              "duration": 125723800,
               "status": "passed"
             },
-            "line": 27,
+            "line": 22,
             "name": "clicar no botão Add to cart",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoBotãoAddToCart()"
@@ -156,10 +155,10 @@
           },
           {
             "result": {
-              "duration": 348531000,
+              "duration": 662241300,
               "status": "passed"
             },
-            "line": 28,
+            "line": 23,
             "name": "o produto foi adicionado ao carrinho",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.o_produto_foi_adicionado_ao_carrinho()"
@@ -182,7 +181,7 @@
         "steps": [
           {
             "result": {
-              "duration": 236010200,
+              "duration": 501475000,
               "status": "passed"
             },
             "line": 10,
@@ -194,7 +193,7 @@
           },
           {
             "result": {
-              "duration": 3370331400,
+              "duration": 9634227200,
               "status": "passed"
             },
             "line": 11,
@@ -207,8 +206,8 @@
         ]
       },
       {
-        "start_timestamp": "2022-03-14T11:42:18.801Z",
-        "line": 31,
+        "start_timestamp": "2022-03-18T01:58:48.832Z",
+        "line": 26,
         "name": "Validar página de checkout",
         "description": "",
         "id": "validações-do-produto;validar-página-de-checkout",
@@ -217,10 +216,10 @@
         "steps": [
           {
             "result": {
-              "duration": 286997500,
+              "duration": 826020600,
               "status": "passed"
             },
-            "line": 32,
+            "line": 27,
             "name": "pesquisar o produto clicando no ícone de lupa",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.pesquisar_o_produto_clicando_no_ícone_de_lupa()"
@@ -229,10 +228,10 @@
           },
           {
             "result": {
-              "duration": 1682356600,
+              "duration": 1873039600,
               "status": "passed"
             },
-            "line": 33,
+            "line": 28,
             "name": "selecionar o produto pesquisado",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.selecionar_o_produto_pesquisado()"
@@ -241,10 +240,10 @@
           },
           {
             "result": {
-              "duration": 273798200,
+              "duration": 5466809000,
               "status": "passed"
             },
-            "line": 34,
+            "line": 29,
             "name": "alterar a cor",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.alterar_a_cor_do_produto()"
@@ -253,10 +252,10 @@
           },
           {
             "result": {
-              "duration": 44026900,
+              "duration": 109079100,
               "status": "passed"
             },
-            "line": 35,
+            "line": 30,
             "name": "alterar a quantidade de produtos",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.alterar_a_quantidade_de_produtos()"
@@ -265,10 +264,10 @@
           },
           {
             "result": {
-              "duration": 43999800,
+              "duration": 85353400,
               "status": "passed"
             },
-            "line": 36,
+            "line": 31,
             "name": "clicar no botão Add to cart",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoBotãoAddToCart()"
@@ -277,10 +276,10 @@
           },
           {
             "result": {
-              "duration": 468062100,
+              "duration": 788764700,
               "status": "passed"
             },
-            "line": 37,
+            "line": 32,
             "name": "acessar a página de checkout",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.acessar_a_página_de_checkout()"
@@ -289,10 +288,10 @@
           },
           {
             "result": {
-              "duration": 3203996500,
+              "duration": 3414553400,
               "status": "passed"
             },
-            "line": 38,
+            "line": 33,
             "name": "vou validar que a soma dos preços corresponde ao total da página de checkout",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.vou_validar_que_a_soma_dos_preços_corresponde_ao_total_da_página_de_checkout()"
@@ -301,11 +300,10 @@
           },
           {
             "result": {
-              "error_message": "java.net.ConnectException: Connection refused: connect\r\n\tat java.base/sun.nio.ch.Net.connect0(Native Method)\r\n\tat java.base/sun.nio.ch.Net.connect(Net.java:576)\r\n\tat java.base/sun.nio.ch.Net.connect(Net.java:565)\r\n\tat java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)\r\n\tat java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)\r\n\tat java.base/java.net.Socket.connect(Socket.java:645)\r\n\tat org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)\r\n\tat org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)\r\n\tat org.apache.http.impl.conn.ManagedClientConnectionImpl.open(ManagedClientConnectionImpl.java:326)\r\n\tat org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)\r\n\tat org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)\r\n\tat org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)\r\n\tat org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)\r\n\tat org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)\r\n\tat org.apache.http.client.HttpClient$execute$0.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat org.apache.http.client.HttpClient$execute$0.call(Unknown Source)\r\n\tat io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder.doRequest(RequestSpecificationImpl.groovy:2072)\r\n\tat io.restassured.internal.http.HTTPBuilder.doRequest(HTTPBuilder.java:495)\r\n\tat io.restassured.internal.http.HTTPBuilder.request(HTTPBuilder.java:452)\r\n\tat io.restassured.internal.http.HTTPBuilder$request$2.call(Unknown Source)\r\n\tat io.restassured.internal.RequestSpecificationImpl.sendHttpRequest(RequestSpecificationImpl.groovy:1453)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat io.restassured.internal.RequestSpecificationImpl.sendRequest(RequestSpecificationImpl.groovy:1202)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:166)\r\n\tat io.restassured.internal.filter.SendRequestFilter.filter(SendRequestFilter.groovy:30)\r\n\tat io.restassured.filter.Filter$filter$0.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat io.restassured.filter.Filter$filter.call(Unknown Source)\r\n\tat io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)\r\n\tat io.restassured.filter.time.TimingFilter.filter(TimingFilter.java:56)\r\n\tat io.restassured.filter.Filter$filter.call(Unknown Source)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)\r\n\tat io.restassured.filter.Filter$filter$0.call(Unknown Source)\r\n\tat io.restassured.internal.filter.FilterContextImpl.next(FilterContextImpl.groovy:72)\r\n\tat io.restassured.filter.FilterContext$next.call(Unknown Source)\r\n\tat io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1672)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)\r\n\tat io.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1678)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:567)\r\n\tat org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)\r\n\tat groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)\r\n\tat groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:819)\r\n\tat groovy.lang.GroovyObject.invokeMethod(GroovyObject.java:39)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.call(PogoInterceptableSite.java:45)\r\n\tat org.codehaus.groovy.runtime.callsite.PogoInterceptableSite.callCurrent(PogoInterceptableSite.java:55)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:203)\r\n\tat io.restassured.internal.RequestSpecificationImpl.patch(RequestSpecificationImpl.groovy:193)\r\n\tat io.restassured.internal.RequestSpecificationImpl.patch(RequestSpecificationImpl.groovy)\r\n\tat br.nttdata.restAssured.Data.atualizaCor(Data.java:81)\r\n\tat br.nttdata.steps.ProdutoSteps.realizar_um_update_no_banco_para_a_cor_escolhida(ProdutoSteps.java:128)\r\n\tat ✽.vou realizar um update no banco para a cor escolhida(file:///C:/Users/anicolle/eclipse-workspace/DesafioNTTData3/src/test/resources/features/produto.feature:39)\r\n",
-              "duration": 49998900,
-              "status": "failed"
+              "duration": 2176930900,
+              "status": "passed"
             },
-            "line": 39,
+            "line": 34,
             "name": "vou realizar um update no banco para a cor escolhida",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.realizar_um_update_no_banco_para_a_cor_escolhida()"
@@ -328,7 +326,7 @@
         "steps": [
           {
             "result": {
-              "duration": 203084100,
+              "duration": 988282300,
               "status": "passed"
             },
             "line": 10,
@@ -340,7 +338,7 @@
           },
           {
             "result": {
-              "duration": 3416707500,
+              "duration": 8902491500,
               "status": "passed"
             },
             "line": 11,
@@ -353,8 +351,8 @@
         ]
       },
       {
-        "start_timestamp": "2022-03-14T11:42:28.476Z",
-        "line": 42,
+        "start_timestamp": "2022-03-18T01:59:13.740Z",
+        "line": 37,
         "name": "Remover produto do carrinho de compras",
         "description": "",
         "id": "validações-do-produto;remover-produto-do-carrinho-de-compras",
@@ -363,10 +361,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4536941900,
+              "duration": 5053603200,
               "status": "passed"
             },
-            "line": 43,
+            "line": 38,
             "name": "clicar no botão See Offer",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoBotãoSeeOffer()"
@@ -375,10 +373,10 @@
           },
           {
             "result": {
-              "duration": 44999100,
+              "duration": 107576100,
               "status": "passed"
             },
-            "line": 44,
+            "line": 39,
             "name": "clicar no botão Add to cart",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoBotãoAddToCart()"
@@ -387,10 +385,10 @@
           },
           {
             "result": {
-              "duration": 50568500,
+              "duration": 120297900,
               "status": "passed"
             },
-            "line": 45,
+            "line": 40,
             "name": "clicar no carrinho de compras",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.clicarNoCarrinhoDeCompras()"
@@ -399,10 +397,10 @@
           },
           {
             "result": {
-              "duration": 4054076800,
+              "duration": 4785675200,
               "status": "passed"
             },
-            "line": 46,
+            "line": 41,
             "name": "remover o produto do carrinho de compras",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.remover_o_produto_do_carrinho_de_compras()"
@@ -411,10 +409,10 @@
           },
           {
             "result": {
-              "duration": 4044822500,
+              "duration": 2098296800,
               "status": "passed"
             },
-            "line": 47,
+            "line": 42,
             "name": "o carinho de compras estará vazio",
             "match": {
               "location": "br.nttdata.steps.ProdutoSteps.o_carinho_de_compras_estará_vazio()"

@@ -1,17 +1,23 @@
 package br.nttdata.steps;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import br.nttdata.database.SQLConnector;
 import br.nttdata.pageFactories.CheckoutFactory;
 import br.nttdata.pageFactories.HomePageFactory;
 import br.nttdata.pageFactories.ProdutoPageFactory;
 import br.nttdata.pageFactories.ShoppingCartPageFactory;
-import br.nttdata.restAssured.Data;
 import br.nttdata.tests.BaseTest;
+import entities.Color;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
@@ -27,9 +33,8 @@ public class ProdutoSteps extends BaseTest {
 	ProdutoPageFactory produtoPageFactory = new ProdutoPageFactory(driver);
 	CheckoutFactory checkoutFactory = new CheckoutFactory(driver);
 	ShoppingCartPageFactory shoppingCartPageFactory = new ShoppingCartPageFactory(driver);
-	
-	Data dados = new Data();
-	public static String alterandoCor = "PURPLE";
+	SQLConnector sqlCon = new SQLConnector();
+	Color colorChoice;
 
 
 	@Dado("que acessei o site AdvantageOnlineShopping")
@@ -43,7 +48,7 @@ public class ProdutoSteps extends BaseTest {
 		
 		homePageFactory.clicarEmSpecialOffer();
 		takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 
 	@E("clicar no botão See Offer")
@@ -53,13 +58,24 @@ public class ProdutoSteps extends BaseTest {
 		homePageFactory.clicarEmSeeOffer();
 		Thread.sleep(2000);
 		takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
+	}
+	
+	@E("selecionar a cor do banco")
+	public void selecionarACorDoBanco() throws ClassNotFoundException, SQLException {
 
+		String colorDB = sqlCon.validaCampos().get("color");
+		colorChoice = produtoPageFactory.ramdomColor();
+		while(!colorDB.equals(colorChoice.getColor())) {
+			colorChoice = produtoPageFactory.ramdomColor();
+		}
+		produtoPageFactory.selecionaCorProduto(colorChoice);
+		Assert.assertEquals(sqlCon.validaCampos().get("color"), colorChoice.getColor());
 	}
 	
 	@Então("vou validar as especificações do produto")
-	public void vou_validar_as_especificações_do_produto() {
+	public void vou_validar_as_especificações_do_produto() throws ClassNotFoundException, SQLException {
 		
-		Map<String, String> valores = dados.validaCampos();
+		Map<String, String> valores = sqlCon.validaCampos();
 		
 		for(Map.Entry<String, String> entry : valores.entrySet()) {
 			Assert.assertEquals(entry.getValue(), produtoPageFactory.extraiConteudoCampo(entry.getKey()));
@@ -69,8 +85,16 @@ public class ProdutoSteps extends BaseTest {
 	@E("alterar a cor")
 	public void alterar_a_cor_do_produto() throws Exception {
 		
-		produtoPageFactory.selecionaCorProduto(alterandoCor);
-		Thread.sleep(2);
+		String colorDB = sqlCon.validaCampos().get("color");
+
+		colorChoice = produtoPageFactory.ramdomColor();
+		
+		while(colorChoice.getColor().equals(colorDB)) {
+			
+			colorChoice = produtoPageFactory.ramdomColor();
+		}
+		produtoPageFactory.selecionaCorProduto((colorChoice));
+		Thread.sleep(5000);
 	}
 	
 	@E("clicar no botão Add to cart")
@@ -84,7 +108,6 @@ public class ProdutoSteps extends BaseTest {
 		
 		Assert.assertEquals((produtoPageFactory.validarProdutoAdicionado("txtQtyCarrinho")), "1");
 		takeSnapShot(driver,"target/screenshoots/" + i++ +".jpg");
-
 	}
 
 	@E("pesquisar o produto clicando no ícone de lupa")
@@ -123,9 +146,10 @@ public class ProdutoSteps extends BaseTest {
 	}
 	
 	@Então("vou realizar um update no banco para a cor escolhida")
-	public void realizar_um_update_no_banco_para_a_cor_escolhida() throws InterruptedException {
+	public void realizar_um_update_no_banco_para_a_cor_escolhida() throws InterruptedException, ClassNotFoundException, SQLException {
 		
-		dados.atualizaCor(alterandoCor);
+		SQLConnector.updateQuery(colorChoice.getColor());
+		Assert.assertEquals(colorChoice.getColor(), sqlCon.validaCampos().get("color"));
 		Thread.sleep(2000);
 	}
 	
@@ -138,16 +162,17 @@ public class ProdutoSteps extends BaseTest {
 	@Quando("remover o produto do carrinho de compras")
 	public void remover_o_produto_do_carrinho_de_compras() throws InterruptedException {
 		
-		
-		Thread.sleep(4000);
-		shoppingCartPageFactory.esvaziarCarrinho();
+		Thread.sleep(2000);
+		while(driver.getPageSource().contains("REMOVE")) {
+			shoppingCartPageFactory.esvaziarCarrinho();
+		}
+		Thread.sleep(2000);
 	}
 
 	@Então("o carinho de compras estará vazio")
 	public void o_carinho_de_compras_estará_vazio() throws Exception {
 
-		WebElement element = driver.findElement(By.xpath("//a[@id='shoppingCartLink']//*[name()='svg']"));
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		shoppingCartPageFactory.pausarMouseSobreCarrinhoDeCompras();
 		Assert.assertEquals("Your shopping cart is empty", shoppingCartPageFactory.msgCarrinhoVazio());
 

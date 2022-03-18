@@ -11,7 +11,6 @@ public class HomePageFactory extends BasePageFactory{
 
 	public HomePageFactory(WebDriver driver) {
 		super(driver);
-		
 	}
 	
 	@FindBy(xpath="//a[contains(text(),'SPECIAL OFFER')]")
@@ -20,9 +19,11 @@ public class HomePageFactory extends BasePageFactory{
 	@FindBy(xpath="//button[@id='see_offer_btn']")
 	WebElement btnSeeOffer;
 	
-	public void clicarEmSpecialOffer() {
-		
-		btnSpecialOffer.click();
+	public void clicarEmSpecialOffer() throws InterruptedException {
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnSpecialOffer)); 
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+
+		Thread.sleep(3000);
 	}
 	
 	

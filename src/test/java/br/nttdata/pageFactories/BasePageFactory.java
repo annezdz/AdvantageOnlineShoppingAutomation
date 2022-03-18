@@ -52,9 +52,4 @@ public class BasePageFactory {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
-    
-  
-    
-   
-
 }

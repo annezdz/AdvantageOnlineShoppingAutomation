@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ShoppingCartPageFactory extends BasePageFactory{
 
@@ -12,9 +13,9 @@ public class ShoppingCartPageFactory extends BasePageFactory{
 		super(driver);
 	}
 	
-	@FindBy(xpath = "//a[normalize-space()='REMOVE']")
+	@FindBy(linkText = "REMOVE")
 	WebElement btnRemoverProduto;
-	
+		
 	@FindBy(xpath = "//body/div[3]/section[1]/article[1]/div[1]/div[1]/label[1]")
 	WebElement txtCarrinhoVazio;
 	
@@ -33,11 +34,14 @@ public class ShoppingCartPageFactory extends BasePageFactory{
 	@FindBy(xpath = "//header/nav[1]/ul[1]/li[2]/ul[1]/li[1]/tool-tip-cart[1]/div[1]/div[1]/label[2]")
 	WebElement mensagemCarrinhoVazio;
 	
+	@FindBy(xpath = "//a[@id='shoppingCartLink']//span[@class='cart ng-binding'][normalize-space()='3']")
+	WebElement numero;
 	
-	public void esvaziarCarrinho() {
-			JavascriptExecutor js = (JavascriptExecutor)driver;
-			js.executeScript("arguments[0].click()", btnRemoverProduto);
-			js.executeScript("arguments[0].click()", btnRemoverProduto);
+	
+	public void esvaziarCarrinho() throws InterruptedException {
+		
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnRemoverProduto)); 
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
 	}
 
 	

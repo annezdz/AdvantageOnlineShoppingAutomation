@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="16.491">
-    <testcase classname="Validações do produto" name="Validar alteração de cor do produto no carrinho" time="16.136">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="83.275">
+    <testcase classname="Validações do produto" name="Validar especificações do produto" time="19.247">
         <system-out><![CDATA[Dado que acessei o site AdvantageOnlineShopping.............................passed
 E no menu clicar na opção Special Offer.....................................passed
 E clicar no botão See Offer.................................................passed
-E alterar a cor.............................................................passed
+Então vou validar as especificações do produto..............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validações do produto" name="Validar alteração de cor do produto no carrinho" time="16.581">
+        <system-out><![CDATA[Dado que acessei o site AdvantageOnlineShopping.............................passed
+E no menu clicar na opção Special Offer.....................................passed
+E clicar no botão See Offer.................................................passed
+E selecionar a cor do banco.................................................passed
 E clicar no botão Add to cart...............................................passed
 Então o produto foi adicionado ao carrinho..................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validações do produto" name="Validar página de checkout" time="24.893">
+        <system-out><![CDATA[Dado que acessei o site AdvantageOnlineShopping.............................passed
+E no menu clicar na opção Special Offer.....................................passed
+E pesquisar o produto clicando no ícone de lupa.............................passed
+E selecionar o produto pesquisado...........................................passed
+E alterar a cor.............................................................passed
+E alterar a quantidade de produtos..........................................passed
+E clicar no botão Add to cart...............................................passed
+E acessar a página de checkout..............................................passed
+Então vou validar que a soma dos preços corresponde ao total da página de checkout.passed
+Então vou realizar um update no banco para a cor escolhida..................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validações do produto" name="Remover produto do carrinho de compras" time="22.07">
+        <system-out><![CDATA[Dado que acessei o site AdvantageOnlineShopping.............................passed
+E no menu clicar na opção Special Offer.....................................passed
+E clicar no botão See Offer.................................................passed
+E clicar no botão Add to cart...............................................passed
+E clicar no carrinho de compras.............................................passed
+Quando remover o produto do carrinho de compras.............................passed
+Então o carinho de compras estará vazio.....................................passed
 ]]></system-out>
     </testcase>
 </testsuite>
